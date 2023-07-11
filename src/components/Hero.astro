@@ -4,7 +4,7 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
 
 ---
 <section class="hero noise" id="hero">
-    <!-- <canvas id="canvas" ></canvas> -->
+    <canvas id="canvas" ></canvas>
     <div class="container">
     <span class="hello ">Hello, I am</span>
     <h2 class="name">Arek Dec.</h2>
@@ -49,28 +49,25 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
     /* Hero Gradient */
 
 canvas {
-    width: 80%;
+    width: 100%;
     height: 110%;
     top: 50%; /* Position the element 50% from the top of the container */
     left: 46%; /* Position the element 50% from the left of the container */
     transform: translate(-50%, -50%); 
     position: absolute;
-    filter: blur(130px);
     animation: changeBgColor 20s ease-in-out infinite alternate;
-    filter: blur(60px);
 
-    background-image:     
-    linear-gradient(90deg, #152020a4 3%, transparent 30%),
-    linear-gradient(90deg, transparent 50%, #152020 100%);
     background-image:
-    linear-gradient(90deg, #152020a4 3%, transparent 30%),
+    linear-gradient(90deg, #0a0f0fa4 3%, transparent 30%),
     linear-gradient(90deg, transparent 50%, #152020 100%),
     radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
     radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
     radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
     radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
     radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
-    }
+
+}
+
 
 .hero {
     background-color: #152020;
