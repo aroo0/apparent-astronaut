@@ -1,0 +1,17 @@
+---
+import Github from './Icons/Github.astro';
+import LinkIcon from './Icons/LinkIcon.astro'
+
+interface Props {
+  link: string,
+  text: string,
+}
+
+const {link, text } = Astro.props
+
+---
+<a href={link} target="_blank">
+    <button class="btn secondary">
+      {text}
+      {text === 'Source Code' ? <Github /> : <LinkIcon />}
+  </button>

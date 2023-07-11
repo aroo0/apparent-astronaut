@@ -254,3 +254,56 @@ a {
 }
 
 
+
+/* Buttons */
+
+    a:has(.btn) {
+        text-decoration: none;
+    }
+    
+    .btn {
+        font-size: clamp(.8rem, 2vw, 1rem);
+        font-family: var(--main-font);
+        font-weight: 500;
+        padding: .7rem;
+        border-radius: .6rem;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: var(--button-bg-transition), var(--button-color-transition);
+        cursor: pointer;    
+    
+        &.primary {
+            background-color: var(--main-dark-color);
+            color: var( --sec-light-color);
+    
+            &:hover {
+                background-color: var(--hover-color);
+            }
+    
+            &.form {
+                width: fit-content;
+                font-size: clamp(.8rem, 1.2vw, 1.1rem);
+                padding: clamp(.5rem, .7vw, .7rem) 1.2rem;
+                border-radius: .7rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: white;
+    
+                & svg {
+                    width: clamp(1rem, 1.2vw, 1.3rem)
+                }
+            } 
+        }
+    
+        &.secondary {
+            color: var(--main-dark-color);
+            background-color: var(--dark-gray-color);
+    
+            &:hover {
+                background-color: var(--sec-light-color);
+            }
+        }
+    }
+    

@@ -1,0 +1,250 @@
+---
+import Button from "./Button.astro";
+import FolderIcon from './Icons/FolderIcon.astro'
+import { Image } from "astro:assets";
+
+import tolkienPhoto from '../assets/retolkienviewcompressed.webp'
+import diaryPhoto from '../assets/sadasfdiarycompressed.webp'
+import kaboomPhoto from '../assets/kaboomcompressed.webp'
+
+---
+<section class="projects" id="projects">
+    <article class="project project-first">
+      <div class='container'>
+        <h2 class="">Projects</h2>
+        </div>
+      <div class="grid one-one container">
+        <div class="image-container column">
+            <Image src={tolkienPhoto}  width='800' height='1001'  alt="screen of website view"/>
+        </div>
+      <div class="column">
+        <h3>reTolkienddit</h4>
+        <span class="small-text">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag">HTML</div>
+          <div class="tech-tag">CSS</div>
+          <div class="tech-tag">JS</div>
+          <div class="tech-tag">React</div>
+          <div class="tech-tag">Redux</div>
+          <div class="tech-tag">API</div>
+        </div>
+        <span class="small-text">Summary</span> 
+        
+        <p>reTolkienddit is a React web app, which utilizes Redux and React-Router. The app fetches most popular posts related to Tolkien or LOTR interests from Reddit API. The details of each post such as image content, vote, and comments are displayed for users to easily consume.</p> 
+
+        <p>The app is mainly composed of three integrated features: Subscribed Tag/Account, Post, and Comments. Custom tags/accounts functionality can be developed, which will allow users to add their own personalized subscriptions, resulting in a more tailored experience.</p>
+        
+        <p>One of the features of app is its Reddit-like mock-up vote functionality, which allows users to vote on posts. Additionally, the search functionality is optimized through its own routing system.</p>
+
+        <p>The design of the app is modern and elegant, with bright neutral colors and orange accents that match the theme of Reddit. </p>
+
+        <div class="links">
+          <Button link="https://retolkienddit.netlify.app/" text="View Project" />
+          <Button link="https://github.com/aroo0/reTolkienddit" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project black">
+      <div class="grid one-one even container">
+        <div class="image-container column">
+            <Image src={diaryPhoto}  width='800' height='1001'  alt="screen of website view"/>
+        </div>
+      <div class="column">
+        <h4>Your sweet ASF Diary</h4>
+        <span class="small-text">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag">HTML</div>
+          <div class="tech-tag">CSS</div>
+          <div class="tech-tag">JS</div>
+        </div>
+
+        <span class="small-text">Summary</span> 
+        <p>Thought of as a personal blog with an astral-utopian-divinatory theme, Your Sweet ASF Diary also serves as a sandbox for experimenting with various stylistic and functional choices in CSS, HTML, and JS.</p>
+
+        <p>The website is designed as a grid with multiple boxes, where each box represents a specific feature such as a fairy corner for divination, a survey on futurism and utopianism, or give the opportunity to read stories and view pretty pictures ^^`. The most ambitious box is the 'Hangman Crystal Edition', which puts a magical Minecraft aesthetic twist on the popular game. </p>
+
+        <p>The website's layout features vibrant, warm, yet balanced colors. The design utilizes repeating gray cells of different sizes, providing a consistent and structured feel. The website leverages the external library Isotope to manage the layout, seamlessly adapting to different tile heights and adds filtering tags.</p>
+        
+        <div class="links">
+          <Button link="https://stalwart-marzipan.netlify.app/" text='View Project' />
+          <Button link="https://github.com/aroo0/Your_Diary" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project gray">
+      <div class="grid one-one container">
+        <div class="image-container column">
+            <Image src={kaboomPhoto}   width='800' height='1001' alt="screen of website view" />
+        </div>
+      <div class="column">
+        <h4>Kaboom!</h4>
+        <span class="small-text">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag">HTML</div>
+          <div class="tech-tag">CSS</div>
+          <div class="tech-tag">JS</div>
+          <div class="tech-tag">Netlify</div>
+        </div>
+
+        <span class="small-text">Summary</span> 
+        <p>Kaboom! Dance School is a fictional dance school that has been brought to life through a website designed using HTML and CSS. The website is hosted on the Netlify platform, ensuring optimal performance and fast loading times for its users.</p>
+
+        <p>The layout is sleek and editorial. The design is based on a bold grid structure, with a thick black border defining each section and creating a sense of order and visual interest. The color palette is playful and fun, with accents of lively pink adding a pop of vibrancy to the overall aesthetic.</p>
+
+        <p>The homepage of the website presents visitors with a captivating hero section featuring an image of skilled dancers and a compelling call-to-action button. From there, one can explore the site's informative pages on the school's services, classes, and schedules.</p>
+
+        <div class="links">
+            <Button link="https://kaboom1234.netlify.app/" text='View Project' />
+            <Button link="https://github.com/aroo0/Kaboom" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project white">
+      <div class="grid one-one container">
+        <div class="column small-project black">
+          <div class='head'>
+            <FolderIcon />
+          <h4>CPU Simulator</h4>
+        </div>
+          <span class="small-text">Technology</span> 
+          <div class="tech-container tag-container">
+            <div class="tech-tag">Python</div>
+            <div class="tech-tag">Terminal</div>
+          </div>
+          <span class="small-text">Summary</span> 
+          <p>CPU Simulator is a Python-written processor design that consists of CPU, Memory, and ISA protocol. It includes three types of memory - Main Memory, Cache, and Register - with different access speeds, as well as Cache memory with LRU replacement and write-back policy. The simulation features a fetch, decode, execute cycle and reads data and command lists from an external .txt file. </p>
+          <Button link="https://github.com/aroo0/CPU-SIMULATOR" text="Source Code" />
+        </div>
+      <div class="column small-project black">
+        <div class='head'>
+            <FolderIcon />
+          <h4>Scale Chord Finder</h4>
+        </div>
+          <span class="small-text">Technology</span> 
+          <div class="tech-container tag-container">
+            <div class="tech-tag">Python</div>
+            <div class="tech-tag">Terminal</div>
+          </div>
+          <span class="small-text">Summary</span> 
+          <p>Scale Chord Finder is a tool designed to quickly find a given chord in minor and major scales, as well as determine the function of a chord in a given scale by specifying its number. It is built on tree and circular list data structures, as well as the BFS tree searching algorithm, allowing for fast results. </p>
+        <Button link="https://github.com/aroo0/Scale-chord-finder" text="Source Code" />
+      </div>
+       </div>
+    </article>
+</section>
+
+
+<style>
+    .projects {
+    padding-bottom: 0;
+    background-color: var(--main-light-color);
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+        padding-bottom: max(.9rem, min(3vw, 2rem));
+    }
+
+    & .black {
+        background-color: var(--bg-dark);
+
+        & h4 {
+            color: var(--main-light-color)
+        }
+
+        & .small-text {
+            color: var(--dark-gray-color)
+        }
+
+        & p {
+            color: var(--main-light-color)
+        }
+    }
+    
+    & .gray {
+        background-color: var(--bg-blue-gray);
+    }
+    
+    & .white { 
+        background-color: var(--main-light-color);
+    }
+
+    & .project {
+        padding-top: clamp(1.5rem, 6vw, 9rem);
+        padding-bottom: clamp(1rem, 9vw, 16rem);
+    }
+
+    & .project-first {
+        padding-top: clamp(.9rem, 3.8vw, 6rem);
+        padding-bottom: clamp(1.5rem, 10vw, 17rem);
+    }
+    
+
+    & .image-container {
+        align-self: flex-start;
+    }
+
+
+    & img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    & .column {
+        display: grid;
+        flex-direction: column;
+        justify-items: start;
+        align-items: center;
+        gap: 1.5rem;
+
+    & .links {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem
+    }
+
+    & .tech-container {
+        gap: .4rem;
+    }
+
+    & .tech-tag {
+        font-size: clamp(.7rem, 2vw, .9rem);
+        border-radius: 3rem;
+        line-height: 1;
+        background-color: var(--dark-gray-color);
+        padding: .3rem .9rem;
+    }
+
+    & .tech-tag::before {
+        content: '\2713';
+        margin-right: 5px;
+        }
+    }
+
+    @media (max-width: 700px) {
+
+        & .image-container {
+            display: none;
+        }
+    }
+}
+
+.small-project {
+    border-radius: clamp(1.5rem, 2.4vw, 2.5rem);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vw, 6rem);
+
+    & h4 {
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+    }
+
+    & .head {
+        display: grid;
+        grid-template-columns: .1fr 1fr;
+        gap: .4rem;
+        align-items: center;
+
+    }
+}
+
+</style>
