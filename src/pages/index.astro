@@ -12,9 +12,9 @@ import Footer from '../components/Footer.astro'
 		<Header />
 		<Hero />
 		<About />
-		<Projects />
+		<!-- <Projects /> -->
 	</main>
-	<Footer />
+	<!-- <Footer /> -->
 </Layout>
 
 <script defer >
@@ -28,48 +28,48 @@ import Footer from '../components/Footer.astro'
 
     const sectionElements = document.querySelectorAll("section");
 
-    // const handleActiveOnScroll = entries => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //         const currentSection = entry.target.id;
-    //         navLinks.forEach(navLinkElement => {
-    //             if (navLinkElement.href.includes(currentSection)) {
-    //             document.querySelector(".active")?.classList.remove("active");
-    //             navLinkElement.classList.add("active");
-    //             }
-    //         });
-    //         }
-    //     });
-    //     };
+    const handleActiveOnScroll = entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const currentSection = entry.target.id;
+            navLinks.forEach(navLinkElement => {
+                if (navLinkElement.href.includes(currentSection)) {
+                document.querySelector(".active")?.classList.remove("active");
+                navLinkElement.classList.add("active");
+                }
+            });
+            }
+        });
+        };
 
-    // const observerOne = new IntersectionObserver(handleActiveOnScroll, {
-    //     rootMargin: "-30% 0px -70% 0px"
-    //     });
+    const observerOne = new IntersectionObserver(handleActiveOnScroll, {
+        rootMargin: "-30% 0px -70% 0px"
+        });
 
-    // sectionElements.forEach(sectionElement => {
-    //     observerOne.observe(sectionElement);
-    //     });
+    sectionElements.forEach(sectionElement => {
+        observerOne.observe(sectionElement);
+        });
 
 
-    // hamburgerMenu.addEventListener('click', () => {
-	// 		hamburgerMenu.classList.toggle('is-open')
-	// 		mainNav.classList.toggle('is-open')
-	// 		body.classList.toggle('overflow')
-	// 			}
-	// 		);
+    hamburgerMenu.addEventListener('click', () => {
+			hamburgerMenu.classList.toggle('is-open')
+			mainNav.classList.toggle('is-open')
+			body.classList.toggle('overflow')
+				}
+			);
 
-    // const navLinks = document.querySelectorAll(".nav-link");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    // navLinks.forEach(link => {
-    //     link.addEventListener('click', () => {
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
 
-    //         hamburgerMenu.classList.remove('is-open')
-    //         mainNav.classList.remove('is-open');
-    //         body.classList.remove('overflow')
-    //             }
-    //         )
-    //     }
-    // )
+            hamburgerMenu.classList.remove('is-open')
+            mainNav.classList.remove('is-open');
+            body.classList.remove('overflow')
+                }
+            )
+        }
+    )
 </script>
 
 <style>
