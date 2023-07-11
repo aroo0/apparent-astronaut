@@ -257,11 +257,11 @@ a {
 
 
 /* Buttons */
-
+    
     a:has(.btn) {
         text-decoration: none;
     }
-    
+
     .btn {
         font-size: clamp(.8rem, 2vw, 1rem);
         font-family: var(--main-font);
@@ -273,7 +273,8 @@ a {
         align-items: center;
         gap: 0.4rem;
         transition: var(--button-bg-transition), var(--button-color-transition);
-        cursor: pointer;    
+        cursor: pointer; 
+
     
         &.primary {
             background-color: var(--main-dark-color);
@@ -301,13 +302,14 @@ a {
         &.secondary {
             color: var(--main-dark-color);
             background-color: var(--dark-gray-color);
+            text-decoration: none;   
     
             &:hover {
                 background-color: var(--sec-light-color);
             }
         }
     }
-    
+
 
 
 /* Footer & Contact Form  */
