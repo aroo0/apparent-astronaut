@@ -1,0 +1,188 @@
+---
+import Wave from './Wave.astro'
+import CarotDown from '../assets/icons/PhCaretDownLight.svg'
+
+---
+<section class="hero noise" id="hero">
+    <canvas id="canvas" ></canvas>
+    <div class="container">
+    <span class="hello ">Hello, I am</span>
+    <h2 class="name">Arek Dec.</h2>
+    <hr class="" />
+    <span class="devo ">A Frontend Developer based in Cracow, Poland. </span>
+    <span class="description ">Deeply passionate about creating immersive UI that captivate users and stays current with new design trends.</span>
+  </div>
+
+  <a href="#about">
+    <div class="button-down">      
+    <img src={CarotDown.src} alt="caret down" width="30" height="30" class="caret"/>
+  </a>
+  </div>
+  <div class="svg-container">
+    <Wave />
+
+  </div>
+  </section>
+
+
+  <script defer>
+    // Get the SVG element and the hero element
+    const svgElement = document.querySelector('.responsive-svg');
+    const heroElement = document.querySelector('.hero');
+    const yearContainer = document.querySelector('#year-container')
+
+    // Update the height of the hero element based on the SVG's current height
+    function updateHeroHeight() {
+        const svgHeight = svgElement.getBoundingClientRect().height;
+        heroElement.style.minHeight = `calc(100vh + ${svgHeight}px)`;
+        }
+
+    // Call the updateHeroHeight function initially and on window resize
+    updateHeroHeight();
+
+    window.addEventListener('resize', updateHeroHeight);
+
+  </script>
+
+  <style>
+    /* Hero section */
+
+    /* Hero Gradient */
+
+canvas {
+    width: 80%;
+    height: 110%;
+    top: 50%; /* Position the element 50% from the top of the container */
+    left: 46%; /* Position the element 50% from the left of the container */
+    transform: translate(-50%, -50%); 
+    position: absolute;
+    filter: blur(130px);
+    animation: changeBgColor 20s ease-in-out infinite alternate;
+    filter: blur(60px);
+
+    background-image:     
+    linear-gradient(90deg, #152020a4 3%, transparent 30%),
+    linear-gradient(90deg, transparent 50%, #152020 100%);
+    background-image:
+    linear-gradient(90deg, #152020a4 3%, transparent 30%),
+    linear-gradient(90deg, transparent 50%, #152020 100%),
+    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
+    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
+    }
+
+.hero {
+    background-color: #152020;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.97' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        pointer-events: none;
+        opacity: 0.8;
+        z-index: 0;
+        mix-blend-mode: soft-light;
+        filter: brightness(80%);
+    }
+
+    & .container {
+        padding-top: 13rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: clamp(1rem, 3vh, 3rem);
+        filter: hue-rotate(50deg);
+        z-index: 3;
+
+        @media (max-width: 1150px) {
+            & {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-height:800px) {
+            &  {
+             padding-top: 6rem;
+     
+            }
+        }
+    }
+    
+
+    & .hello {
+        font-size: clamp(0.9rem, 4vw, 2rem);
+        color: var(--dark-gray-color);
+        transition-delay: 100ms;
+
+    }
+
+    & .name {
+        font-family: var(--sec-font);
+        font-weight: 400;
+        font-size: clamp(2.1rem, 10vw, 5.6rem);
+        color: var(--main-light-color);
+        line-height: 0.8;
+        transition-delay: 200ms;
+    }
+
+    & .devo {
+        font-size: clamp(1rem, 6vw, 2rem);
+        color: var(--main-light-color);
+        transition-delay: 400ms;
+
+    }
+
+    & .description {
+        font-size: clamp(0.9rem, 4vw, 1.6rem);
+        color: var(--sec-light-color);
+        font-weight: 300;
+        line-height: 1.5;
+        max-width: 60ch;
+        transition-delay: 500ms;
+
+    }
+
+    & hr {
+        border: none; /* Remove default hr border */
+        border-top: 2px solid var(--sec-light-color);
+        max-width: 50rem;
+        transition-delay: 200ms;
+        
+
+    }
+
+}
+
+.svg-container {
+    position: absolute;
+    bottom: -1px;
+    width: 100%; /* Make the SVG container span the entire width */
+    overflow: hidden; /* Hide any overflow from the SVG */
+    z-index: 3;
+  }
+
+.button-down {
+    border: 1px solid var(--dark-gray-color);
+    padding: .9rem .6rem;
+    border-radius: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 88vh;
+    transition: var(--hover-transition);
+
+    &:hover {
+        filter: brightness(110%);
+
+    }
+}
+  </style>

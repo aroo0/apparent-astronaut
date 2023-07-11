@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Resets  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+body {
+    margin: 0;
+}
+
+:root {
+    
+    /* Typography */
+
+    --main-font: 'Montserrat', sans-serif;
+    --sec-font: 'Michroma', sans-serif;
+    
+    /* Colors */
+
+    --main-light-color: #fff;
+    --sec-light-color: #F0F0F0;
+    --main-dark-color: #283147;
+    --font-gray-color: #4B4B4B;
+    --font-lightgray-color: #8a8a8a;
+    --light-gray-color: #D0CFCF;
+    --dark-gray-color: #DDDDDD;
+    --bg-gray: #F2ECEC;
+    --bg-dark: #1E1B22;
+    --bg-blue-gray: #f4f6f7;
+    --accent-color: #505da7;
+    --hover-color: #414b68;
+
+    /* Transitions */
+
+    --simple-transition: all 0.2s ease-out;
+    --button-bg-transition: background-color 0.1s ease-in-out;
+    --button-color-transition: background-color 0.1s ease-in-out;
+
+    --menu-transition: all .3s ease-in-out;
+    --hover-transition: color 0.2s ease, border 0.2s ease;
+
+    /* Margins */
+
+    --margin-frame: clamp(.8rem, 1.4vw, 2.4rem);
+
+      /* General */
+
+      scroll-behavior: smooth;
+      font-family: var(--main-font);
+      
+
+}
+
+/* General */
+
+
+h2 {
+    font-family: var(--sec-font);
+    color: var(--main-dark-color);
+    font-size: clamp(1.75rem, 4vw, 4.25rem);
+    font-weight: 400;
+}
+
+h3 {
+    font-family: var(--sec-font);
+    color: var(--main-dark-color);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+h4 {
+    font-family: var(--sec-font);
+    color: var(--main-dark-color);
+    font-size: clamp(1.2rem, 2vw, 2.25rem);
+    font-weight: 400;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.4;
+    color: var(--font-gray-color);
+    max-width: 60ch;
+}
+
+.small-text {
+    color: var(--font-lightgray-color)
+}
+
+a {
+    color: var(--font-gray-color);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+
+/* Aniamations */
+
+@keyframes moveUpDown {
+    /* Define the keyframes for the animation */
+    from {
+      transform: translateY(-5px); /* Start position: no translation */
+      opacity: 1
+    }
+    to {
+      transform: translateY(15px); /* End position: translate vertically by 10 pixels */
+      opacity: 0;
+    }
+  }
+
+@keyframes changeBgColor {
+0% {
+    background-color: #285f50;
+}
+50% {
+    background-color: #283d5f;
+    }
+    100% {
+    background-color: #3d3271;
+    }
+
+}
+
+@keyframes fadeIn {
+0% { 
+    opacity: 0; 
+    filter: blur(2px);
+}
+
+100% { opacity: 1; }
+}
+
+
+/* Scroll Observer Animations */
+
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(5px);
+    transition-property: opacity transform filter;
+    transition-duration: 1s;
+    transition-timing-function: easy;
+    transition-delay: 100ms;
+
+
+    @media (max-width: 400px) {
+        & {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0);
+        }
+        
+    }
+
+    &.show {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+
+
+/* Misc */
+
+.hidden {
+    display: none;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.blend-mode  {
+    mix-blend-mode: difference;
+}
+
+
+
+/* Structure */
+
+
+.container {
+    margin: 0 auto 0 10%;
+    max-width: 70svw;
+
+    @media (max-width: 1150px) {
+        & {
+            max-width: 100%;
+            margin: 0 2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        & {
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+.grid {
+    display: flex;
+    margin-top: 1rem;
+
+    &.two-one {
+        grid-template-columns: 2fr 1.5fr;
+        gap: clamp(2rem, 8vw, 8rem);
+    }
+
+    &.one-one {
+        gap: clamp(2rem, 1vw, 3rem);
+    }
+
+    &.even {
+        direction: rtl; /* Reverse the order of items within the grid item */
+      }
+
+    &.even  > * {
+        direction: ltr; /* Restore the original direction of child elements */
+      }
+
+    & .column {
+        flex: 1;
+    }
+
+    @media (max-width: 800px) {
+
+        &  {
+            flex-direction: column;
+
+            &.one-one {
+                flex-direction: column-reverse;
+            }
+        }
+      }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 4vh, 3rem);
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+

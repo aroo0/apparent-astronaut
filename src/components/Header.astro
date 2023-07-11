@@ -1,0 +1,306 @@
+---
+import Github from './Icons/Github.astro'
+
+---
+
+<header>
+    <a href="#hero" class="nav-link" >
+        <h1 class="logo blend-mode">AD</h1>
+    </a>
+    <div class="hamburger-menu blend-mode">
+        <span class="bar"></span>
+    </div>
+    <nav class="main-nav">
+        <div class="nav-links blend-mode">
+            <ul>
+                <li >
+                    <a href="#about" class="nav-link">About me</a>
+                </li>
+                <li >
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li >
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li >
+                    <a href="/arekdec_resume.pdf" class="nav-link" target=”_blank” ><span class="resume">My résumé</span></a>
+                </li >
+            </ul>
+        </div>
+    </nav>
+    <span class="github-icon blend-mode">
+          <a href="https://github.com/aroo0" target=”_blank” >
+            <Github />
+          </a>
+        </span>
+
+  </header>
+
+
+  <script defer>
+
+    const hamburgerMenu = document.querySelector('.hamburger-menu') 
+    const mainNav = document.querySelector('.main-nav') 
+    const socialNav = document.querySelector('.social-nav')
+    const body = document.body;
+
+    hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('is-open')
+        mainNav.classList.toggle('is-open')
+        socialNav.classList.toggle('is-open')
+        body.classList.toggle('overflow')
+            }
+        )
+
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+
+            hamburgerMenu.classList.remove('is-open')
+            mainNav.classList.remove('is-open');
+            socialNav.classList.remove('is-open')
+            body.classList.remove('overflow')
+
+                }
+            )
+        }
+    )
+
+  </script>
+
+<style>
+
+
+    /* Navigation */
+
+.logo {
+    color: var(--dark-gray-color);
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-radius: clamp(0.8rem, 1vw, 1.1rem);
+    border: 2px solid var(--dark-gray-color);
+    position: fixed;
+    top: var(--margin-frame);
+    left: var(--margin-frame);
+    z-index: 100;
+    transition: var(--hover-transition);
+
+    &:hover {
+        color: var(--main-light-color);
+        border: 2px solid var(--main-light-color);
+    }
+}
+
+.main-nav {
+
+    & .nav-links {
+        position: fixed;
+        top: var(--margin-frame);
+        right: calc(var(--margin-frame) + 1rem);
+        display: block;
+        z-index: 10;
+    }
+
+    & ul { 
+
+        list-style-type: none;
+
+        & li {
+            text-align: center;
+            line-height: 1.1;
+            margin: 0.7rem 0;
+            list-style-type: none;
+            font-size: 0.9rem;
+
+            &:nth-last-child(1) {
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+    }
+
+        & li::before {
+            font-weight: 300;
+            display: flex;
+            font-size: 1rem;
+            padding: .4rem 0 1rem;
+            justify-content: center;
+            content: '\26AC';
+            color: var(--dark-gray-color);
+            transition: var(--hover-transition);
+            
+        }
+
+        & a {
+            color: var(--dark-gray-color);
+            text-transform: uppercase;
+            padding: .6rem 1rem;
+            font-weight: 600;
+            text-decoration: none; 
+            transition: var(--hover-transition);
+
+            &.active {
+                color: var(--main-light-color);
+                border: 1px solid var(--main-light-color);
+                border-radius: 10rem;
+            }
+
+            &:hover {
+                color: var(--main-light-color);
+            }
+        }
+
+        & .resume {
+            margin: 0;
+            border: 1px solid var(--dark-gray-color);
+            padding: .8em 1.4em;
+            transition: var(--hover-transition);
+        
+            &:hover {
+                border: 1px solid var(--main-light-color);
+            }
+        };
+
+    &.is-open {
+        position: fixed;
+        display: block;
+        z-index: 90;
+        background-color: var(--bg-dark);
+
+
+        & .nav-links {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        & a {
+            font-weight: 400;
+            padding: .6rem;
+
+            &.active {
+                color: var(--main-light-color);
+                font-weight: 600;
+                border: none;
+            }
+        }
+
+        & li {
+            font-size: 1rem;
+            margin: 0.7rem auto;
+            text-align: center;
+            max-width: fit-content;
+
+            &:before {
+                content: '';
+
+                }
+            }
+        }
+    }
+
+.github-icon {
+    position: fixed;
+    z-index: 100;
+    bottom: calc(1.5 * var(--margin-frame));
+    left: calc(var(--margin-frame) + 20px);
+
+
+    & a {
+        color: var(--dark-gray-color);
+        transition: var(--hover-transition);
+
+        &:hover {
+            color: var(--main-light-color);
+        }
+    }
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: calc(var(--margin-frame) + 5px);
+    right: var(--margin-frame);
+    z-index: 100;
+    display: none;
+    cursor: pointer;
+    width: 34px;
+    height: 26px;
+    pointer-events: all;
+
+    & .bar,
+    & .bar:before,
+    & .bar:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: var(--dark-gray-color);
+        height: 2px;
+        width: 100%;
+        border-radius: 3rem;
+        transition: all .3s ease-in-out;
+    }
+
+    & .bar {
+        top: 0rem;
+    }
+
+    & .bar:before {
+        top: 12px;
+        width: 80%;
+        right: 0;
+    }
+
+    & .bar:after {
+        top: 24px;
+    }
+
+    &.is-open {
+
+        .bar {
+          transform: rotate(45deg);
+          top: 13px;
+
+          &:before {
+            width: 0%;
+          }
+
+          &:after {
+            top: 0;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+      
+
+@media (max-width: 1150px) {
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        min-height: 100vh;
+        touch-action: none;
+    }
+
+    .main-nav > * {
+        animation: fadeIn ease-in-out .3s;
+    }
+    .social-nav {
+        display: none;
+        animation: fadeIn ease-in-out .3s;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+    }
+
+    .logo {
+        position: absolute;
+    }
+}
+
+</style>
