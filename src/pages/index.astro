@@ -23,31 +23,32 @@ import Footer from '../components/Footer.astro'
     const mainNav = document.querySelector('.main-nav') 
     const socialNav = document.querySelector('.social-nav')
     const body = document.body;
+
     // Actived class menu on scroll
 
     const sectionElements = document.querySelectorAll("section");
 
-    const handleActiveOnScroll = entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            const currentSection = entry.target.id;
-            navLinks.forEach(navLinkElement => {
-                if (navLinkElement.href.includes(currentSection)) {
-                document.querySelector(".active")?.classList.remove("active");
-                navLinkElement.classList.add("active");
-                }
-            });
-            }
-        });
-        };
+    // const handleActiveOnScroll = entries => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //         const currentSection = entry.target.id;
+    //         navLinks.forEach(navLinkElement => {
+    //             if (navLinkElement.href.includes(currentSection)) {
+    //             document.querySelector(".active")?.classList.remove("active");
+    //             navLinkElement.classList.add("active");
+    //             }
+    //         });
+    //         }
+    //     });
+    //     };
 
-    const observerOne = new IntersectionObserver(handleActiveOnScroll, {
-        rootMargin: "-30% 0px -70% 0px"
-        });
+    // const observerOne = new IntersectionObserver(handleActiveOnScroll, {
+    //     rootMargin: "-30% 0px -70% 0px"
+    //     });
 
-    sectionElements.forEach(sectionElement => {
-        observerOne.observe(sectionElement);
-        });
+    // sectionElements.forEach(sectionElement => {
+    //     observerOne.observe(sectionElement);
+    //     });
 
 
     hamburgerMenu.addEventListener('click', () => {
