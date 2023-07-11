@@ -63,10 +63,9 @@ window.addEventListener('resize', function() {
   regionY = (canvas.height - regionHeight) / 2;
   balls = []
 
-  if (canvas.width >= 600) { // Check screen width before generating balls
     generateBalls(regionX, regionY, regionWidth, regionHeight);
 
-}
+
 
 
 })
@@ -191,10 +190,9 @@ function animate() {
   
   requestAnimationFrame(animate);
 }
-if (canvas.width >= 600) { // Check screen width before generating balls
   generateBalls(regionX, regionY, regionWidth, regionHeight);
   animate();
-}
+
 
 
   </script>
@@ -211,7 +209,7 @@ canvas {
     left: 50%; /* Position the element 50% from the left of the container */
     transform: translate(-50%, -50%); 
     position: absolute;
-    animation: changeBgColor 3s ease-in-out infinite alternate;
+    /* animation: changeBgColor 3s ease-in-out infinite alternate;
 
     background-image:
     linear-gradient(90deg, #0a0f0fa4 3%, transparent 30%),
@@ -220,7 +218,7 @@ canvas {
     radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
     radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
     radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
+    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%); */
 
 }
 
