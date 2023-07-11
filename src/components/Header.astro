@@ -22,49 +22,27 @@ import Github from './Icons/Github.astro'
                 <li >
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
-                <li >
-                    <a href="/arekdec_resume.pdf" class="nav-link" target=”_blank” ><span class="resume">My résumé</span></a>
+                <li>
+                    <a href="/arekdec_resume.pdf" class="nav-link" target=”_blank” ><div class="resume">My résumé</div></a>
                 </li >
             </ul>
         </div>
+        <span class="github-icon blend-mode">
+            <a href="https://github.com/aroo0" target=”_blank” >
+              <Github />
+            </a>
+          </span>
     </nav>
-    <span class="github-icon blend-mode">
-          <a href="https://github.com/aroo0" target=”_blank” >
-            <Github />
-          </a>
-        </span>
+
 
   </header>
 
 
   <script defer>
 
-    const hamburgerMenu = document.querySelector('.hamburger-menu') 
-    const mainNav = document.querySelector('.main-nav') 
-    const socialNav = document.querySelector('.social-nav')
-    const body = document.body;
-
-    hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('is-open')
-        mainNav.classList.toggle('is-open')
-        socialNav.classList.toggle('is-open')
-        body.classList.toggle('overflow')
-            }
-        )
 
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
 
-            hamburgerMenu.classList.remove('is-open')
-            mainNav.classList.remove('is-open');
-            socialNav.classList.remove('is-open')
-            body.classList.remove('overflow')
-
-                }
-            )
-        }
-    )
 
   </script>
 
@@ -114,13 +92,14 @@ import Github from './Icons/Github.astro'
             font-size: 0.9rem;
 
             &:nth-last-child(1) {
-                margin: 0 auto;
-                padding: 0;
+                padding-bottom: .5rem;
             }
+            
+
         }
     }
 
-        & li::before {
+        & li:before {
             font-weight: 300;
             display: flex;
             font-size: 1rem;
@@ -129,13 +108,13 @@ import Github from './Icons/Github.astro'
             content: '\26AC';
             color: var(--dark-gray-color);
             transition: var(--hover-transition);
-            
+
         }
 
         & a {
             color: var(--dark-gray-color);
             text-transform: uppercase;
-            padding: .6rem 1rem;
+            padding: .6rem 1.2rem;
             font-weight: 600;
             text-decoration: none; 
             transition: var(--hover-transition);
@@ -145,7 +124,6 @@ import Github from './Icons/Github.astro'
                 border: 1px solid var(--main-light-color);
                 border-radius: 10rem;
             }
-
             &:hover {
                 color: var(--main-light-color);
             }
@@ -174,6 +152,8 @@ import Github from './Icons/Github.astro'
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 100%;
+
 
         }
 
@@ -206,7 +186,7 @@ import Github from './Icons/Github.astro'
     position: fixed;
     z-index: 100;
     bottom: calc(1.5 * var(--margin-frame));
-    left: calc(var(--margin-frame) + 20px);
+    left: calc(var(--margin-frame) - 5px);
 
 
     & a {

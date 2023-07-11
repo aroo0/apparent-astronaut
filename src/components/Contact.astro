@@ -1,0 +1,38 @@
+---
+---
+<section class="contact" id="contact">
+    <div class="box-container">
+       <div class="desciption-container">
+         <h2>Stay in touch,</h2>
+         <p>use the form below or write me a message directly at <u>aro0 [at] keemail [dot] me</u></p>
+       </div>
+       <form 
+         action="/form/success" 
+         method="post" 
+         aria-label="Email Form" 
+         data-netlify="true"
+         >
+         <div class="form-field">
+           <label for="email" class="hidden" aria-hidden="true">Email Address</label>
+           <input type="email" id="email" name="email" placeholder="Email Address" aria-required="true" required>
+         </div>
+         <div class="form-field">
+           <label for="name" class="hidden" aria-hidden="true">Name</label>
+           <input type="text" id="name" name="name" placeholder="Your Name" aria-required="true" required >
+         </div>
+         <div class="form-field">
+           <label for="subject" class="hidden" aria-hidden="true">Subject</label>
+           <input type="text" id="subject" name="subject" placeholder="Subject" aria-required="true" required>
+         </div>
+         <div class="form-field">
+           <label for="text" class="hidden" aria-hidden="true">Message</label>
+           <textarea id="text" name="text" placeholder="Your message" aria-required="true" required></textarea>
+         </div>
+         <button class="btn primary form" type="submit">
+           <span>Send
+           </span>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17Z"/></svg>
+         </button>
+         </form>
+     </div>        
+   </section>

@@ -1,17 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout>
-	<Hero />
-	<About />
-	<Projects />
-	<Contact />
+	<main>
+		<Header />
+		<Hero />
+		<About />
+		<Projects />
+	</main>
+	<Footer />
 </Layout>
+
+<script defer >
+	    
+    const hamburgerMenu = document.querySelector('.hamburger-menu') 
+    const mainNav = document.querySelector('.main-nav') 
+    const socialNav = document.querySelector('.social-nav')
+    const body = document.body;
+    // Actived class menu on scroll
+
+    const sectionElements = document.querySelectorAll("section");
+
+    const handleActiveOnScroll = entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const currentSection = entry.target.id;
+            navLinks.forEach(navLinkElement => {
+                if (navLinkElement.href.includes(currentSection)) {
+                document.querySelector(".active")?.classList.remove("active");
+                navLinkElement.classList.add("active");
+                }
+            });
+            }
+        });
+        };
+
+    const observerOne = new IntersectionObserver(handleActiveOnScroll, {
+        rootMargin: "-30% 0px -70% 0px"
+        });
+
+    sectionElements.forEach(sectionElement => {
+        observerOne.observe(sectionElement);
+        });
+
+
+    hamburgerMenu.addEventListener('click', () => {
+			hamburgerMenu.classList.toggle('is-open')
+			mainNav.classList.toggle('is-open')
+			body.classList.toggle('overflow')
+				}
+			);
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+
+            hamburgerMenu.classList.remove('is-open')
+            mainNav.classList.remove('is-open');
+            body.classList.remove('overflow')
+                }
+            )
+        }
+    )
+</script>
 
 <style>
 
