@@ -143,7 +143,7 @@ a {
         background-image: radial-gradient(ellipse at center, #285f50 150px,transparent 70%);
     }
     50% {
-        background-image: radial-gradient(ellipse at center, #283d5f 150px,transparent 70%);;
+        background-image: radial-gradient(ellipse at center, #283d5f 150px,transparent 70%);
         }
     100% {
         background-image: radial-gradient(ellipse at center, #3d3271 150px,transparent 70%);

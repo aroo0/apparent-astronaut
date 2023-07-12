@@ -42,18 +42,19 @@ import Gradient from './Gradient.astro'
     window.addEventListener('resize', updateHeroHeight);
 
     const hero = document.querySelector('.hero');
-    const mover = document.querySelector('.mover')
+    const mover = document.querySelector('.mover');
+    const gradientContainer = document.querySelector('.gradient-container');
 
     let mouseX = 0;
     let mouseY = 0;
     let currentX = 0;
     let currentY = 0;
-    const ease = 0.01;
+    const ease = 0.02;
 
     hero.addEventListener("mousemove", e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    });
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        });
 
     function animate() {
     const dx = mouseX - currentX;
@@ -65,11 +66,20 @@ import Gradient from './Gradient.astro'
     mover.style.setProperty('--mouse-x', currentX + "px");
     mover.style.setProperty('--mouse-y', currentY + "px");
 
+    const parentRect = hero.getBoundingClientRect();
+    const mousePosX = mouseX - parentRect.left;
+    const mousePosY = mouseY - parentRect.top;
+
+    const translateX = (parentRect.width - gradientContainer.offsetWidth) * (mousePosX / parentRect.width);
+    const translateY = (parentRect.height - gradientContainer.offsetHeight) * (mousePosY / (parentRect.height * 3));
+
+    gradientContainer.style.setProperty('--mouse-x', `${translateX}px`);
+    gradientContainer.style.setProperty('--mouse-y', `${translateY}px`);
+
     requestAnimationFrame(animate);
     }
 
-animate();
-
+    animate();
 
 
     
@@ -78,18 +88,16 @@ animate();
   <style>
 
 .mover {
-    opacity: .7;
-    width: 800px;
-    height: 800px;
-    translate: -200px -50px;
+    opacity: .5;
+    width: 1200px;
+    height: 1200px;
+    translate: -300px -100px;
     transform: skew(10deg, 5deg);
     position: absolute;
     left: var(--mouse-x);
     top: var(--mouse-y);
     background-image: radial-gradient(ellipse at center, #152020 150px,transparent 70%);
-
     animation: changeBgColorGradient infinite 15s ease-in-out alternate;
-
 
 }
 
