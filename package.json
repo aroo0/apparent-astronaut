@@ -12,12 +12,17 @@
   "dependencies": {
     "@astrojs/image": "^0.17.2",
     "@astrojs/partytown": "^1.2.3",
-    "astro": "^2.8.0"
+    "astro": "^2.8.0",
+    "autoprefixer": "^10.4.14",
+    "math-calc": "^1.2.0",
+    "postcss-cli": "^10.1.0",
+    "postcss-for": "^2.1.1"
   },
   "devDependencies": {
     "cssnano": "^6.0.1",
     "postcss": "^8.4.25",
     "postcss-nested": "^6.0.1",
-    "postcss-nesting": "^12.0.0"
+    "postcss-nesting": "^12.0.0",
+    "postcss-simple-vars": "^7.0.1"
   }
 }

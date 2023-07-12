@@ -4,7 +4,8 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
 import Gradient from './Gradient.astro'
 ---
 <section class="hero noise" id="hero">
-    <Gradient />
+    <Gradient/> 
+    <div class="mover"></div>
     <div class="container">
     <span class="hello ">Hello, I am</span>
     <h2 class="name">Arek Dec.</h2>
@@ -40,12 +41,58 @@ import Gradient from './Gradient.astro'
     updateHeroHeight();
     window.addEventListener('resize', updateHeroHeight);
 
+    const hero = document.querySelector('.hero');
+    const mover = document.querySelector('.mover')
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    const ease = 0.01;
+
+    hero.addEventListener("mousemove", e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    });
+
+    function animate() {
+    const dx = mouseX - currentX;
+    const dy = mouseY - currentY;
+
+    currentX += dx * ease;
+    currentY += dy * ease;
+
+    mover.style.setProperty('--mouse-x', currentX + "px");
+    mover.style.setProperty('--mouse-y', currentY + "px");
+
+    requestAnimationFrame(animate);
+    }
+
+animate();
+
 
 
     
   </script>
 
   <style>
+
+.mover {
+    opacity: .7;
+    width: 800px;
+    height: 800px;
+    translate: -200px -50px;
+    transform: skew(10deg, 5deg);
+    position: absolute;
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    background-image: radial-gradient(ellipse at center, #152020 150px,transparent 70%);
+
+    animation: changeBgColorGradient infinite 15s ease-in-out alternate;
+
+
+}
+
 
 
 .hero {
@@ -57,8 +104,7 @@ import Gradient from './Gradient.astro'
     linear-gradient(90deg, transparent 50%, #111717 100%),
     radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
     radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%);
-    
-    animation: changeBgColor infinite 10s ease-in-out alternate;
+    animation: changeBgColor infinite 15s ease-in-out alternate;
     
 
     
