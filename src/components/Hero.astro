@@ -2,7 +2,11 @@
 import Wave from './Wave.astro'
 import CarotDown from '../assets/icons/PhCaretDownLight.svg'
 import Gradient from './Gradient.astro'
+
+
+
 ---
+
 <section class="hero noise" id="hero">
     <Gradient/> 
     <div class="mover"></div>
@@ -27,6 +31,9 @@ import Gradient from './Gradient.astro'
 
 
   <script defer>
+
+
+    
     // Get the SVG element and the hero element
     const svgElement = document.querySelector('.responsive-svg');
     const heroElement = document.querySelector('.hero');
@@ -41,47 +48,46 @@ import Gradient from './Gradient.astro'
     updateHeroHeight();
     window.addEventListener('resize', updateHeroHeight);
 
-    const hero = document.querySelector('.hero');
-    const mover = document.querySelector('.mover');
-    const gradientContainer = document.querySelector('.gradient-container');
+    // const hero = document.querySelector('.hero');
+    // const mover = document.querySelector('.mover');
+    // const gradientContainer = document.querySelector('.gradient-container');
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    const ease = 0.02;
+    // let mouseX = 0;
+    // let mouseY = 0;
+    // let currentX = 0;
+    // let currentY = 0;
+    // const ease = 0.02;
 
-    hero.addEventListener("mousemove", e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        });
+    // hero.addEventListener("mousemove", e => {
+    //     mouseX = e.clientX;
+    //     mouseY = e.clientY;
+    //     });
 
-    function animate() {
-    const dx = mouseX - currentX;
-    const dy = mouseY - currentY;
+    // function animate() {
+    // const dx = mouseX - currentX;
+    // const dy = mouseY - currentY;
 
-    currentX += dx * ease;
-    currentY += dy * ease;
+    // currentX += dx * ease;
+    // currentY += dy * ease;
 
-    mover.style.setProperty('--mouse-x', currentX + "px");
-    mover.style.setProperty('--mouse-y', currentY + "px");
+    // mover.style.setProperty('--mouse-x', currentX + "px");
+    // mover.style.setProperty('--mouse-y', currentY + "px");
 
-    const parentRect = hero.getBoundingClientRect();
-    const mousePosX = mouseX - parentRect.left;
-    const mousePosY = mouseY - parentRect.top;
+    // const parentRect = hero.getBoundingClientRect();
+    // const mousePosX = mouseX - parentRect.left;
+    // const mousePosY = mouseY - parentRect.top;
 
-    const translateX = (parentRect.width - gradientContainer.offsetWidth) * (mousePosX / parentRect.width);
-    const translateY = (parentRect.height - gradientContainer.offsetHeight) * (mousePosY / (parentRect.height * 3));
+    // const translateX = (parentRect.width - gradientContainer.offsetWidth) * (mousePosX / parentRect.width);
+    // const translateY = (parentRect.height - gradientContainer.offsetHeight) * (mousePosY / (parentRect.height * 3));
 
-    gradientContainer.style.setProperty('--mouse-x', `${translateX}px`);
-    gradientContainer.style.setProperty('--mouse-y', `${translateY}px`);
+    // gradientContainer.style.setProperty('--mouse-x', `${translateX}px`);
+    // gradientContainer.style.setProperty('--mouse-y', `${translateY}px`);
 
-    requestAnimationFrame(animate);
-    }
+    // requestAnimationFrame(animate);
+    // }
 
-    animate();
-
-
+    // animate();
+  
     
   </script>
 
