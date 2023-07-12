@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import tolkienPhoto from '../assets/retolkienviewcompressed.webp'
 import diaryPhoto from '../assets/sadasfdiarycompressed.webp'
 import kaboomPhoto from '../assets/kaboomcompressed.webp'
+import minasPhoto from '../assets/minasmongrel.jpg'
 
 ---
 <section class="projects" id="projects">
@@ -13,6 +14,38 @@ import kaboomPhoto from '../assets/kaboomcompressed.webp'
       <div class='container'>
         <h2 class="">Projects</h2>
         </div>
+      <div class="grid one-one container">
+        <div class="image-container column">
+            <Image src={minasPhoto}  width='800' height='1001'  alt="screen of website view"/>
+        </div>
+      <div class="column">
+        <h3>Minas Mongrel</h4>
+        <span class="small-text">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag">HTML</div>
+          <div class="tech-tag">PostCSS</div>
+          <div class="tech-tag">JS</div>
+          <div class="tech-tag">TypeScript</div>
+          <div class="tech-tag">React</div>
+          <div class="tech-tag">Astro</div>
+          <div class="tech-tag">Figma</div>
+        </div>
+        <span class="small-text">Summary</span> 
+        
+        <p>Minas Mongrel is a personal blog realized using the Astro framework. The homepage serves prominently displays the most recent posts. The blog page, built with React, provides users with a comprehensive collection of them all. It features dynamic search functionality, and supports tags, witch enabling users to navigate through the content by filtering posts. The project/writing page, also implemented using React, enables dynamic sorting and filtering of the content it contains. </p> 
+
+        <p>The post view is designed to aesthetically interpret Markdown syntax. It includes a front matter that highlights important information about the post, and content ‘markdown’ section. Users have the option to share the post through various social media platforms. Furthermore, related posts functionality is integrated, suggesting relevant articles to keep readers engaged.</p>
+        
+        <p>The page incorporates graphical elements that adapt their size dynamically based on the page and window size, ensuring a responsive and visually appealing layout. The overall structure of the page utilizes a css grid, facilitating the creation of complex post layouts and the rendering of tabular information.</p>
+
+    
+        <div class="links">
+          <Button link="https://unrivaled-empanada-3b13a7.netlify.app" text="View Project" />
+          <Button link="https://github.com/aroo0/evolved-eclipse" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project gray">
       <div class="grid one-one container">
         <div class="image-container column">
             <Image src={tolkienPhoto}  width='800' height='1001'  alt="screen of website view"/>
@@ -42,7 +75,6 @@ import kaboomPhoto from '../assets/kaboomcompressed.webp'
           <Button link="https://retolkienddit.netlify.app/" text="View Project" />
           <Button link="https://github.com/aroo0/reTolkienddit" text="Source Code" />
         </div>
-    </div>
     </article>
     <article class="project black">
       <div class="grid one-one even container">

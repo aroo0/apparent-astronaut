@@ -10,17 +10,19 @@ interface Props {
 const {link, text } = Astro.props
 
 ---
-
+<a class='btn-link' href={link} target="_blank">
     <button class="btn secondary">
-      <a href={link} target="_blank"></a>
       {text}
       {text === 'Source Code' ? <Github /> : <LinkIcon />}
-    </a>
+
   </button>
-
-
+</a>
 
 <style>
+
+.btn-link {
+    text-decoration: none;
+}
 
 
 

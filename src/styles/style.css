@@ -279,6 +279,10 @@ a {
         text-decoration: none;
     }
 
+    a .btn {
+        text-decoration: none;
+    }
+
     .btn {
         font-size: clamp(.8rem, 2vw, 1rem);
         font-family: var(--main-font);
