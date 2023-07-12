@@ -114,18 +114,7 @@ a {
     }
   }
 
-@keyframes changeBgColor {
-0% {
-    background-color: #285f50;
-}
-50% {
-    background-color: #283d5f;
-    }
-    100% {
-    background-color: #3d3271;
-    }
 
-}
 
 @keyframes fadeIn {
 0% { 
@@ -136,8 +125,23 @@ a {
 100% { opacity: 1; }
 }
 
+@keyframes changeBgColor {
+    0% {
+        background-color: #285f50;
+    }
+    50% {
+        background-color: #283d5f;
+        }
+        100% {
+        background-color: #3d3271;
+        }
+    
+    }
+
 
 /* Scroll Observer Animations */
+
+
 
 .scroll-animated {
     opacity: 0;

@@ -1,0 +1,119 @@
+---
+
+---
+    <div class="purple-gray-gradient"></div>
+    <div class="purple-gradient"></div>
+    <div class="blue-gradient"></div>
+
+
+
+
+<style>
+
+
+@keyframes rotate {
+    0%, 100% {
+        rotate: 1deg;
+    }
+    50% {
+        rotate: 30deg;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        scale: 1;
+
+    }
+    50% {
+        scale: 1.4;
+    }
+}
+
+@keyframes opacity {
+    0%, 100% {
+        opacity: .7;
+
+    }
+    50% {
+        opacity: .1;
+    }
+}
+
+
+
+@keyframes skewing {
+    0%, 100% {
+        transform: skew(0, 0) ;
+    }
+    50% {
+        transform: skew(20deg, 30deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate3d(0, 0, 0) skew(0, 0) ;
+        opacity: .7;
+    }
+    100% {
+        transform: translate3d(6rem, 7rem, 150em) skew(15deg, 20deg);
+        opacity: .3;
+    }
+}
+
+
+
+
+
+    .purple-gradient {
+        opacity: .6;
+        width: 50svw;
+        height: 40svw;
+        position: absolute;
+        left: 1%;
+        top: 6%;
+    
+        background-image:
+            radial-gradient(ellipse at center, hsla(322,45%,41%,1) 100px,transparent 70%); 
+        animation: 
+            rotate infinite 6s cubic-bezier(0.42, 0, 0.98, 0.2) alternate,
+            scale infinite 7s cubic-bezier(0.17, 0.6, 1, 1) alternate,
+            skewing infinite 2s ease-in-out alternate,
+            move infinite 10s ease-in-out alternate;
+    }
+
+    .purple-gray-gradient {
+        width: 100svw;
+        height: 60svw;
+        position: absolute;
+        left: -40%;
+        bottom: -50%;
+    
+        background-image:
+            radial-gradient(ellipse at center, rgb(74, 53, 79), rgb(77, 57, 85),transparent 70%); 
+        animation: 
+            rotate infinite 12s cubic-bezier(0.42, 0, 0.49, 0.57) alternate-reverse,
+            scale infinite 8s cubic-bezier(0.17, 0.6, 1, 1) alternate-reverse,
+            opacity infinite 10s cubic-bezier(0.17, 0.6, 1, 1) alternate-reverse;
+    }
+
+    .blue-gradient {
+        opacity: .6;
+        width: 70svw;
+        height: 50svw;
+        position: absolute;
+        right: -10%;
+        top: -36%;
+    
+        background-image:
+            radial-gradient(ellipse at center, hsla(234,44%,36%,1) 100px, hsla(234,44%,36%,1) 200px, transparent 70% ); 
+        animation: 
+            rotate infinite 12s cubic-bezier(0.42, 0, 0.98, 0.2) alternate,
+            scale infinite 8s cubic-bezier(0.17, 0.6, 1, 1) alternate-reverse,
+            move infinite 10s cubic-bezier(0.18, 0.51, 1, 1) alternate,
+            opacity infinite 10s cubic-bezier(0.17, 0.6, 1, 1) alternate-reverse;
+  
+    }
+
+</style>

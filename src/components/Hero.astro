@@ -1,9 +1,10 @@
 ---
 import Wave from './Wave.astro'
 import CarotDown from '../assets/icons/PhCaretDownLight.svg'
-
+import Gradient from './Gradient.astro'
 ---
 <section class="hero noise" id="hero">
+    <Gradient />
     <div class="container">
     <span class="hello ">Hello, I am</span>
     <h2 class="name">Arek Dec.</h2>
@@ -52,16 +53,15 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
     position: relative;
     overflow: hidden;
     background-image:
-    linear-gradient(90deg, #152020a4 3%, transparent 30%),
-    linear-gradient(90deg, transparent 50%, #152020 100%),
-    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+    linear-gradient(110deg, rgba(30, 34, 34, 0.81) 5%, transparent 30%),
+    linear-gradient(90deg, transparent 50%, #111717 100%),
     radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
-    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
-    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
+    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%);
+    
+    animation: changeBgColor infinite 10s ease-in-out alternate;
+    
 
-
-
+    
 
 
     &::after {
@@ -86,8 +86,7 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
         flex-direction: column;
         justify-content: center;
         gap: clamp(1rem, 3vh, 3rem);
-        filter: hue-rotate(50deg);
-        z-index: 3;
+        z-index: 4;
 
 
     }
@@ -97,6 +96,8 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
         font-size: clamp(0.9rem, 4vw, 2rem);
         color: var(--dark-gray-color);
         transition-delay: 100ms;
+        z-index: 4;
+
 
     }
 
@@ -107,12 +108,16 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
         color: var(--main-light-color);
         line-height: 0.8;
         transition-delay: 200ms;
+        z-index: 4;
+
     }
 
     & .devo {
         font-size: clamp(1rem, 6vw, 2rem);
         color: var(--main-light-color);
         transition-delay: 400ms;
+        z-index: 4;
+
 
     }
 
@@ -123,6 +128,8 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
         line-height: 1.5;
         max-width: 60ch;
         transition-delay: 500ms;
+        z-index: 4;
+
 
     }
 
@@ -131,6 +138,8 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
         border-top: 2px solid var(--sec-light-color);
         max-width: 50rem;
         transition-delay: 200ms;
+        z-index: 4;
+
         
 
     }
@@ -142,7 +151,6 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
     bottom: -1px;
     width: 100%; /* Make the SVG container span the entire width */
     overflow: hidden; /* Hide any overflow from the SVG */
-    z-index: 3;
   }
 
 .button-down {
@@ -154,6 +162,7 @@ import CarotDown from '../assets/icons/PhCaretDownLight.svg'
     transform: translateX(-50%);
     top: 88vh;
     transition: var(--hover-transition);
+    z-index: 4;
 
     &:hover {
         filter: brightness(110%);
