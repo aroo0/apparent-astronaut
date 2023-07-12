@@ -383,6 +383,13 @@ footer,
         width: 60svw;
         max-width: 50rem;
 
+        @media (max-width: 600px) {
+            & {
+                width: 90svw;
+                
+            }
+        }
+
     }
 
     & form {
