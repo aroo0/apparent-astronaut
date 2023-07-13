@@ -200,7 +200,8 @@ a {
             transition: none;
         }
     }
-    
+
+
 }
 
 .hidden-translate {
@@ -214,6 +215,26 @@ a {
 
 
 }
+
+@media screen and (max-width: 600px) {
+
+    .hidden {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none
+
+    }
+
+    .hidden-translate {
+        opacity: 1;
+        filter: none;
+        transform: none; 
+        transition:  none;
+    }
+
+}
+
 
 .show {
     opacity: 1;
