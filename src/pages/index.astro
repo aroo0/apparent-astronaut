@@ -6,26 +6,9 @@ import About from '../components/About.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro'
 ---
-
-
 <Layout>
     
 	<main>
-        <div class="box green">hello</div>
-<style>
-  .box{
-    display:block;
-    width: 100px;
-    height: 100px;
-    color: green;
-  }
-</style>
-<script>
-import { gsap } from "gsap/dist/gsap";
-gsap.to(".box", { 
-  x: 200,
-});
-</script>
 		<Header />
 		<Hero />
 		<About />
@@ -33,7 +16,6 @@ gsap.to(".box", {
 	</main>
 	<Footer />
 </Layout>
-
 
 
 
