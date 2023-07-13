@@ -9,7 +9,23 @@ import Footer from '../components/Footer.astro'
 
 
 <Layout>
+    
 	<main>
+        <div class="box green">hello</div>
+<style>
+  .box{
+    display:block;
+    width: 100px;
+    height: 100px;
+    color: green;
+  }
+</style>
+<script>
+import { gsap } from "gsap";
+gsap.to(".box", { 
+  x: 200,
+});
+</script>
 		<Header />
 		<Hero />
 		<About />

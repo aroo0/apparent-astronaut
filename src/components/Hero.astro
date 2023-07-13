@@ -31,31 +31,29 @@ import Gradient from './Gradient.astro'
 
 
   <script>
-    import {gsap} from 'gsap/dist/gsap';
-    import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
     const paths = [...document.querySelectorAll('path.path-anim')];
     paths.forEach(el => {
-    const svgEl = el.closest('svg');
-    const pathTo = el.dataset.pathTo;
+        const svgEl = el.closest('svg');
+        const pathTo = el.dataset.pathTo;
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: svgEl,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-        }
-    })
-    .to(el, {
-        ease: "circ",
-        attr: { d: pathTo },
-        delay: .3
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: svgEl,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        })
+        .to(el, {
+            ease: "",
+            attr: { d: pathTo },
+            delay: 0.3
+        });
     });
-});
-
-
 
   </script>
 
