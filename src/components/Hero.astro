@@ -31,15 +31,11 @@ import Gradient from './Gradient.astro'
 
 
   <script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    const paths = [...document.querySelectorAll('path.path-anim')];
-    paths.forEach(el => {
-        const svgEl = el.closest('svg');
-        const pathTo = el.dataset.pathTo;
-
+    const path = document.querySelector('.path-anim')
+        const svgEl = path.closest('svg');
+        const pathTo = path.dataset.pathTo;
         gsap.timeline({
             scrollTrigger: {
                 trigger: svgEl,
@@ -48,12 +44,11 @@ import Gradient from './Gradient.astro'
                 scrub: true
             }
         })
-        .to(el, {
+        .to(path, {
             ease: "",
             attr: { d: pathTo },
             delay: 0.3
         });
-    });
 
   </script>
 
