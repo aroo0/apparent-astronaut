@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600');
 
 /* Resets  */
 
@@ -8,9 +8,6 @@
     box-sizing: border-box;
     }
     
-body {
-    margin: 0;
-}
 
 :root {
     
@@ -116,14 +113,6 @@ a {
 
 
 
-@keyframes fadeIn {
-0% { 
-    opacity: 0; 
-    filter: blur(2px);
-}
-
-100% { opacity: 1; }
-}
 
 @keyframes changeBgColor {
     0% {
