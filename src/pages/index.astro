@@ -7,7 +7,6 @@ import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro'
 ---
 <Layout>
-    
 	<main>
 		<Header />
 		<Hero />
@@ -17,16 +16,10 @@ import Footer from '../components/Footer.astro'
 	<Footer />
 </Layout>
 
-
-<script>
-
-
-</script>
 <script defer >
 	    
     const hamburgerMenu = document.querySelector('.hamburger-menu') 
     const mainNav = document.querySelector('.main-nav') 
-    const socialNav = document.querySelector('.social-nav')
     const body = document.body;
 
     // Actived class menu on scroll
@@ -82,58 +75,19 @@ import Footer from '../components/Footer.astro'
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
-                        }
-                    });
+                    }
+                });
             });
 
     const elementsToShow = document.querySelectorAll('.hidden');
 
-    const startObserver = () => {
-        elementsToShow.forEach((el) => {
+    elementsToShow.forEach((el) => {
             displayElementsObserver.observe(el);
-        });
-    };
+    });
 
-    const stopObserver = () => {
-        elementsToShow.forEach((el) => {
-            displayElementsObserver.unobserve(el);
-        });
-    };
+    // 
 
-    const handleResize = () => {
-        if (window.innerWidth > 600) {
-            startObserver();
-        } else {
-            stopObserver();
-        }
-    };
-
-    // Initial check on page load
-    handleResize();
-
-    // Check on window resize
-    window.addEventListener('resize', handleResize);
-
-        
     window.scrollTo(0, 0);
-
-
 
 </script>
 
-<style>
-
-.container {
-    display: flex;
-    height: 100svh;
-    align-items: center;
-    justify-content: center;
-}
-.circle {
-    background-color: red;
-    border-radius: 100px;
-    width: 40px;
-    height: 40px;
-}
-
-</style>

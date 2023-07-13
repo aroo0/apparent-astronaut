@@ -31,6 +31,9 @@ import Gradient from './Gradient.astro'
 
 
   <script>
+
+        //  Waveing wave animation on scroll //
+        
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
@@ -55,8 +58,10 @@ import Gradient from './Gradient.astro'
     });
 </script>
 
+ <script defer>
 
-  <script defer>
+            // Seting size of Wave //
+
 
     // Get the SVG element and the hero element
     const svgElement = document.querySelector('.responsive-svg');
@@ -70,7 +75,10 @@ import Gradient from './Gradient.astro'
 
     // Call the updateHeroHeight function initially and on window resize
     updateHeroHeight();
+
     window.addEventListener('resize', updateHeroHeight);
+
+            // Mouseover gradient element //
 
     const hero = document.querySelector('.hero');
     const mover = document.querySelector('.mover');
@@ -125,11 +133,7 @@ import Gradient from './Gradient.astro'
         }
     );
 
-
-  
-    
   </script>
-
   <style>
 
 .mover {
@@ -171,10 +175,6 @@ import Gradient from './Gradient.astro'
                 radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
         }
     }
-    
-
-    
-
 
     &::after {
         content: "";
@@ -199,18 +199,13 @@ import Gradient from './Gradient.astro'
         justify-content: center;
         gap: clamp(1rem, 3vh, 3rem);
         z-index: 4;
-
-
     }
-    
 
     & .hello {
         font-size: clamp(0.9rem, 4vw, 2rem);
         color: var(--dark-gray-color);
         transition-delay: 100ms;
         z-index: 4;
-
-
     }
 
     & .name {
@@ -221,7 +216,6 @@ import Gradient from './Gradient.astro'
         line-height: 0.8;
         transition-delay: 200ms;
         z-index: 4;
-
     }
 
     & .devo {
@@ -229,8 +223,6 @@ import Gradient from './Gradient.astro'
         color: var(--main-light-color);
         transition-delay: 400ms;
         z-index: 4;
-
-
     }
 
     & .description {
@@ -242,7 +234,6 @@ import Gradient from './Gradient.astro'
         transition-delay: 600ms;
         z-index: 4;
 
-
     }
 
     & hr {
@@ -251,9 +242,6 @@ import Gradient from './Gradient.astro'
         max-width: 50rem;
         transition-delay: 200ms;
         z-index: 4;
-
-        
-
     }
 
 }
@@ -280,7 +268,6 @@ import Gradient from './Gradient.astro'
         filter: brightness(110%);
 
     }
-
     
     @media only screen and (max-width: 350px ) {
         & {
