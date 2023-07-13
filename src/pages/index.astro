@@ -18,67 +18,78 @@ import Footer from '../components/Footer.astro'
 	<Footer />
 </Layout>
 
-<script defer>
-    
-    
-</script>
+
+
 
 <script defer >
 	    
-    const hamburgerMenu = document.querySelector('.hamburger-menu') 
-    const mainNav = document.querySelector('.main-nav') 
-    const socialNav = document.querySelector('.social-nav')
-    const body = document.body;
+    // const hamburgerMenu = document.querySelector('.hamburger-menu') 
+    // const mainNav = document.querySelector('.main-nav') 
+    // const socialNav = document.querySelector('.social-nav')
+    // const body = document.body;
 
-    // Actived class menu on scroll
+    // // Actived class menu on scroll
 
-    const sectionElements = document.querySelectorAll("section");
+    // const sectionElements = document.querySelectorAll("section");
 
-    const handleActiveOnScroll = entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            const currentSection = entry.target.id;
-            navLinks.forEach(navLinkElement => {
-                if (navLinkElement.href.includes(currentSection)) {
-                document.querySelector(".active")?.classList.remove("active");
-                navLinkElement.classList.add("active");
-                }
-            });
-            }
-        });
-        };
+    // const handleActiveOnScroll = entries => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //         const currentSection = entry.target.id;
+    //         navLinks.forEach(navLinkElement => {
+    //             if (navLinkElement.href.includes(currentSection)) {
+    //             document.querySelector(".active")?.classList.remove("active");
+    //             navLinkElement.classList.add("active");
+    //             }
+    //         });
+    //         }
+    //     });
+    //     };
 
-    const observerOne = new IntersectionObserver(handleActiveOnScroll, {
-        rootMargin: "-30% 0px -70% 0px"
-        });
+    // const observerOne = new IntersectionObserver(handleActiveOnScroll, {
+    //     rootMargin: "-30% 0px -70% 0px"
+    //     });
 
-    sectionElements.forEach(sectionElement => {
-        observerOne.observe(sectionElement);
-        });
+    // sectionElements.forEach(sectionElement => {
+    //     observerOne.observe(sectionElement);
+    //     });
 
 
-    hamburgerMenu.addEventListener('click', () => {
-			hamburgerMenu.classList.toggle('is-open')
-			mainNav.classList.toggle('is-open')
-			body.classList.toggle('overflow')
-				}
-			);
+    // hamburgerMenu.addEventListener('click', () => {
+	// 		hamburgerMenu.classList.toggle('is-open')
+	// 		mainNav.classList.toggle('is-open')
+	// 		body.classList.toggle('overflow')
+	// 			}
+	// 		);
 
-    const navLinks = document.querySelectorAll(".nav-link");
+    // const navLinks = document.querySelectorAll(".nav-link");
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    // navLinks.forEach(link => {
+    //     link.addEventListener('click', () => {
 
-            hamburgerMenu.classList.remove('is-open')
-            mainNav.classList.remove('is-open');
-            body.classList.remove('overflow')
-                }
-            )
-        }
-    )
+    //         hamburgerMenu.classList.remove('is-open')
+    //         mainNav.classList.remove('is-open');
+    //         body.classList.remove('overflow')
+    //             }
+    //         )
+    //     }
+    // )
+
 </script>
 
 <style>
 
+.container {
+    display: flex;
+    height: 100svh;
+    align-items: center;
+    justify-content: center;
+}
+.circle {
+    background-color: red;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
 
 </style>

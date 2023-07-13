@@ -30,6 +30,36 @@ import Gradient from './Gradient.astro'
   </section>
 
 
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const paths = [...document.querySelectorAll('path.path-anim')];
+    paths.forEach(el => {
+    const svgEl = el.closest('svg');
+    const pathTo = el.dataset.pathTo;
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: svgEl,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+        }
+    })
+    .to(el, {
+        ease: "circ",
+        attr: { d: pathTo },
+        delay: .3
+    });
+});
+
+
+
+  </script>
+
+
   <script defer>
 
     // Get the SVG element and the hero element
@@ -98,6 +128,8 @@ import Gradient from './Gradient.astro'
             }
         }
     );
+
+
   
     
   </script>
@@ -252,5 +284,13 @@ import Gradient from './Gradient.astro'
         filter: brightness(110%);
 
     }
+
+    
+    @media only screen and (max-width: 350px ) {
+        & {
+            display: none;
+        }
+    }
+
 }
   </style>
