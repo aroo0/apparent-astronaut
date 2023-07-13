@@ -58,81 +58,86 @@ import Gradient from './Gradient.astro'
     });
 </script>
 
- <script defer>
-
-            // Seting size of Wave //
-
-
+<script defer>
+    // Seting size of Wave //
+  
     // Get the SVG element and the hero element
     const svgElement = document.querySelector('.responsive-svg');
     const heroElement = document.querySelector('.hero');
-
+  
     // Update the height of the hero element based on the SVG's current height
     function updateHeroHeight() {
-        const svgHeight = svgElement.getBoundingClientRect().height;
-        heroElement.style.minHeight = `calc(100vh + ${svgHeight}px)`;
-        }
+      const svgHeight = svgElement.getBoundingClientRect().height;
+      heroElement.style.minHeight = `calc(100vh + ${svgHeight}px)`;
+    }
 
-    // Call the updateHeroHeight function initially and on window resize
-    updateHeroHeight();
-
-    window.addEventListener('resize', updateHeroHeight);
-
-            // Mouseover gradient element //
-
+    updateHeroHeight()
+  
+    // Debounce function to limit the frequency of function calls
+    function debounce(func, delay) {
+      let timerId;
+      return function (...args) {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+  
+    // Call the updateHeroHeight function initially and on window resize (debounced)
+    const debouncedUpdateHeroHeight = debounce(updateHeroHeight, 250);
+    window.addEventListener('resize', debouncedUpdateHeroHeight);
+  
+    // Mouseover gradient element //
+  
     const hero = document.querySelector('.hero');
     const mover = document.querySelector('.mover');
     const gradientContainer = document.querySelector('.gradient-container');
-
+  
     let mouseX = 0;
     let mouseY = 0;
     let currentX = 0;
     let currentY = 0;
     const ease = 0.02;
-
-    hero.addEventListener("mousemove", e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        });
-
+  
+    hero.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+  
     function animate() {
-    const dx = mouseX - currentX;
-    const dy = mouseY - currentY;
-
-    currentX += dx * ease;
-    currentY += dy * ease;
-
-    mover.style.setProperty('--mouse-x', currentX + "px");
-    mover.style.setProperty('--mouse-y', currentY + "px");
-
-    const parentRect = hero.getBoundingClientRect();
-    const mousePosX = mouseX - parentRect.left;
-    const mousePosY = mouseY - parentRect.top;
-
-    const translateX = (parentRect.width - gradientContainer.offsetWidth) * (mousePosX / parentRect.width);
-    const translateY = (parentRect.height - gradientContainer.offsetHeight) * (mousePosY / (parentRect.height * 3));
-
-    gradientContainer.style.setProperty('--mouse-x', `${translateX}px`);
-    gradientContainer.style.setProperty('--mouse-y', `${translateY}px`);
-
-    requestAnimationFrame(animate);
+      const dx = mouseX - currentX;
+      const dy = mouseY - currentY;
+  
+      currentX += dx * ease;
+      currentY += dy * ease;
+  
+      mover.style.setProperty('--mouse-x', currentX + 'px');
+      mover.style.setProperty('--mouse-y', currentY + 'px');
+  
+      const parentRect = hero.getBoundingClientRect();
+      const mousePosX = mouseX - parentRect.left;
+      const mousePosY = mouseY - parentRect.top;
+  
+      const translateX = (parentRect.width - gradientContainer.offsetWidth) * (mousePosX / parentRect.width);
+      const translateY = (parentRect.height - gradientContainer.offsetHeight) * (mousePosY / (parentRect.height * 3));
+  
+      gradientContainer.style.setProperty('--mouse-x', `${translateX}px`);
+      gradientContainer.style.setProperty('--mouse-y', `${translateY}px`);
+  
+      requestAnimationFrame(animate);
     }
-
+  
     function checkWindowSize() {
-        if (window.innerWidth > 1150) {
-            animate();
-        }
+      if (window.innerWidth > 1150) {
+        animate();
+      }
     }
-
+  
+    // Consolidating the event listeners and function calls
+    const debouncedCheckWindowSize = debounce(checkWindowSize, 250);
+    window.addEventListener('resize', debouncedCheckWindowSize);
+  
+    // Call checkWindowSize initially
     checkWindowSize();
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 1150) {
-            checkWindowSize();
-            }
-        }
-    );
-
   </script>
   <style>
 
