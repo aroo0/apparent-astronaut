@@ -9,21 +9,21 @@ import Gradient from './Gradient.astro'
 
 <section class="hero noise" id="hero">
     <Gradient/> 
-    <div class="mover"></div>
+    <div class="mover "></div>
     <div class="container">
-    <span class="hello ">Hello, I am</span>
-    <h2 class="name">Arek Dec.</h2>
-    <hr class="" />
-    <span class="devo ">A Frontend Developer based in Cracow, Poland. </span>
-    <span class="description ">Deeply passionate about creating immersive UI that captivate users and stays current with new design trends.</span>
+    <span class="hello hidden">Hello, I am</span>
+    <h2 class="name hidden">Arek Dec.</h2>
+    <hr class="hidden"/>
+    <span class="devo hidden">A Frontend Developer based in Cracow, Poland. </span>
+    <span class="description hidden">Deeply passionate about creating immersive UI that captivate users and stays current with new design trends.</span>
   </div>
 
   <a href="#about">
-    <div class="button-down">      
-    <img src={CarotDown.src} alt="caret down" width="30" height="30" class="caret"/>
+    <div class="button-down hidden">      
+    <img src={CarotDown.src} alt="caret down" width="30" height="30" class="caret" />
   </a>
   </div>
-  <div class="svg-container">
+  <div class="svg-container ">
     <Wave />
 
   </div>
@@ -31,9 +31,12 @@ import Gradient from './Gradient.astro'
 
 
   <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    const path = document.querySelector('.path-anim')
+    window.addEventListener('load', (event) => {
+        const path = document.querySelector('.path-anim')
         const svgEl = path.closest('svg');
         const pathTo = path.dataset.pathTo;
         gsap.timeline({
@@ -49,8 +52,8 @@ import Gradient from './Gradient.astro'
             attr: { d: pathTo },
             delay: 0.3
         });
-
-  </script>
+    });
+</script>
 
 
   <script defer>
@@ -236,7 +239,7 @@ import Gradient from './Gradient.astro'
         font-weight: 300;
         line-height: 1.5;
         max-width: 60ch;
-        transition-delay: 500ms;
+        transition-delay: 600ms;
         z-index: 4;
 
 

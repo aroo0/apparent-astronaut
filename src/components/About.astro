@@ -48,19 +48,19 @@ function generatePastelColor() {
 ---
 <section class="about" id="about">
     <div class='container'>
-    <h2 class="">Get to know,</h2>
+    <h2 class="hidden">Get to know,</h2>
         <div class="grid two-one">
-            <div class='column'>
-                <h3 class="">My aproach</h3>
-                <p class="">As a Frontend Developer, I am constantly eager to expand my skillset, explore new frameworks, and experiment with cutting-edge technologies to create modern and innovative web experiences.</p>
-                <p class="">My primary focus is on building front-end projects that prioritize user experiences, while also delivering clean and functional designs.</p>
-                <p class="">I encourage you to explore some of my projects in the Projects section.</p>
+            <div class='about-content column'>
+                <h3 class="hidden">My aproach</h3>
+                <p class="hidden">As a Frontend Developer, I am constantly eager to expand my skillset, explore new frameworks, and experiment with cutting-edge technologies to create modern and innovative web experiences.</p>
+                <p class="hidden">My primary focus is on building front-end projects that prioritize user experiences, while also delivering clean and functional designs.</p>
+                <p class="hidden">I encourage you to explore some of my projects in the Projects section.</p>
             </div>
             <div class='column'>
-                <h3 class="">Skills</h3>
+                <h3 class="hidden">Skills</h3>
                 <div class="skills-container tag-container">
-                    {allItems.map(skill =>  (
-                        <span class='skill'  style={{ backgroundColor: generatePastelColor() }}>{skill}</span>
+                    {allItems.map((skill, index) =>  (
+                        <span class='skill hidden-translate'  style={{ backgroundColor: generatePastelColor(), transitionDelay: `${350 + (index * 50)}ms` }}>{skill}</span>
                     ))}
                 </div>
             </div>
@@ -74,6 +74,19 @@ function generatePastelColor() {
     background-color: var(--bg-gray);
     padding-top: clamp(.8rem, 9vw, 9rem);
     padding-bottom: clamp(2rem, 17vw, 20rem);
+
+
+    & .about-content > :nth-child(1) {
+      transition-delay: 200ms;
+    }
+    & .about-content > :nth-child(3) {
+      transition-delay: 400ms;
+
+    }
+    & .about-content > :nth-child(4) {
+      transition-delay: 600ms;
+
+}
 
     & .skills-container {
         gap: 1rem
@@ -93,5 +106,8 @@ function generatePastelColor() {
         margin-right: 5px;
     }
 }
+
+
+
 
   </style>

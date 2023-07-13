@@ -18,7 +18,10 @@ import Footer from '../components/Footer.astro'
 </Layout>
 
 
+<script>
 
+
+</script>
 <script defer >
 	    
     const hamburgerMenu = document.querySelector('.hamburger-menu') 
@@ -72,6 +75,23 @@ import Footer from '../components/Footer.astro'
             )
         }
     )
+
+    // Display animation 
+
+    const displayElementsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); 
+                    }
+                });
+            });
+
+        const elementsToShow = document.querySelectorAll('.hidden, .hidden-translate');
+
+        elementsToShow.forEach((el) => {
+            displayElementsObserver.observe(el); 
+            });
+
 
 </script>
 
