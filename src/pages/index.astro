@@ -68,7 +68,6 @@ import Footer from '../components/Footer.astro'
             )
         }
     )
-
     // Display animation on scroll
 
     const displayElementsObserver = new IntersectionObserver((entries) => {
@@ -78,16 +77,9 @@ import Footer from '../components/Footer.astro'
                     }
                 });
             });
-
     const elementsToShow = document.querySelectorAll('.hidden');
-
     elementsToShow.forEach((el) => {
             displayElementsObserver.observe(el);
     });
-
-    // 
-
-    window.scrollTo(0, 0);
-
 </script>
 
