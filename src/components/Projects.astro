@@ -7,6 +7,8 @@ import tolkienPhoto from '../assets/retolkienviewcompressed.webp'
 import diaryPhoto from '../assets/sadasfdiarycompressed.webp'
 import kaboomPhoto from '../assets/kaboomcompressed.webp'
 import minasPhoto from '../assets/minasmongrel.jpg'
+import rojslowPhoto from '../assets/rojslow.jpg'
+import dribblePhoto from '../assets/dribble.jpg'
 
 ---
 <section class="projects" id="projects">
@@ -14,6 +16,65 @@ import minasPhoto from '../assets/minasmongrel.jpg'
       <div class='container'>
         <h2 class="hidden">Projects</h2>
         </div>
+      <div class="grid one-one container">
+        <div class="image-container column">
+          <Image src={rojslowPhoto}  width='1359' height='1428'  class='hidden' alt="screen of website view" quality={'high'}/>
+        </div>
+      <div class="column">
+        <h4 class="hidden">rójsłów.pl</h4>
+        <span class="small-text hidden">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag hidden">React</div>
+          <div class="tech-tag hidden">Next.js</div>
+          <div class="tech-tag hidden">Tailwind</div>
+          <div class="tech-tag hidden">JS</div>
+          <div class="tech-tag hidden">MongoDB</div>
+          <div class="tech-tag hidden">Figma</div>
+        </div>
+        <span class="small-text hidden">Summary</span> 
+
+        <p class='hidden'>The application designed to foster creativity and collaboration by bringing together enthusiasts of collective nouns for animal in polish. Users can seamlessly create, share, and explore a plethora of imaginative terms used to describe groups of animals. The platform offers a full spectrum of CRUD operations. Leveraging NextAuth with Google and GitHub integration users can make accounts, and furthmore personalize their experience by modifying usernames and letting avatars dynamically reflect their identities.  </p>
+
+        <p class='hidden'>The 'Like' functionality adds an extra layer of engagement, allowing users to appreciate and support each other's creations. A cleverly devised rank system, based on earned likes, serves as a testament to users' creativity and involvement within the community. Rójsłów.pl features an intuitive search engine and implementation of infinite scroll witch guarantees unhindered exploration. </p>
+
+
+    
+        <div class="links hidden">
+          <Button link="https://rojslow.vercel.app/" text="View Project" />
+          <Button link="https://github.com/aroo0/rojslow" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project black">
+      <div class="grid one-one even container">
+        <div class="image-container column">
+            <Image src={dribblePhoto}  width='1359' height='1428'  class='hidden' alt="screen of website view" quality={'high'}/>
+        </div>
+      <div class="column">
+        <h4 class='hidden'>Dribble Clone</h4>
+        <span class="small-text hidden">Technology</span> 
+        <div class="tech-container tag-container hidden">
+          <div class="tech-tag">React</div>
+          <div class="tech-tag">Next.js</div>
+          <div class="tech-tag">Typescript</div>
+          <div class="tech-tag">Grafbase</div>
+          <div class="tech-tag">Tailwind</div>
+        </div>
+
+        <span class="small-text hidden">Summary</span> 
+        <p class='hidden'>"Dribble Clone" is a web platform that faithfully recreates the essence of the popular platform Dribbble. It integrates all four CRUD (Create, Read, Update, Delete) operations seamlessly. Users can create an account, and once logged in, they are empowered to create, edit, and delete their own projects.</p>
+
+        <p class='hidden'>The platform's backend architecture revolves around meticulously crafted models for users and projects. These models provide a structured foundation for interactions with the Grafbase database. Uploaded image files are hosted on Cloudinary.</p>
+
+        <p class='hidden'>One standout feature is the search engine that equips users with the ability to explore a vast collection of projects. Users can search not only by keywords but also by applying filters to categories. To enhance navigation through the abundance of content, the platform integrates a pagination system.</p>
+        
+        <div class="links hidden">
+          <Button link="https://dribble-clone-ashy.vercel.app/" text='View Project' />
+          <Button link="https://github.com/aroo0/dribble_clone_nextjs13" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project">
       <div class="grid one-one container">
         <div class="image-container column">
             <Image src={minasPhoto}  width='800' height='1001'  alt="screen of website view" class='hidden'/>
@@ -31,12 +92,11 @@ import minasPhoto from '../assets/minasmongrel.jpg'
           <div class="tech-tag hidden">Figma</div>
         </div>
         <span class="small-text hidden">Summary</span> 
-        
-        <p class='hidden'>Minas Mongrel is a personal blog realized using the Astro framework. The homepage serves prominently displays the most recent posts. The blog page, built with React, provides users with a comprehensive collection of them all. It features dynamic search functionality, and supports tags, witch enabling users to navigate through the content by filtering posts. The project/writing page, also implemented using React, enables dynamic sorting and filtering of the content it contains. </p> 
 
-        <p class='hidden'>The post view is designed to aesthetically interpret Markdown syntax. It includes a front matter that highlights important information about the post, and content ‘markdown’ section. Users have the option to share the post through various social media platforms. Furthermore, related posts functionality is integrated, suggesting relevant articles to keep readers engaged.</p>
-        
-        <p class='hidden'>The page incorporates graphical elements that adapt their size dynamically based on the page and window size, ensuring a responsive and visually appealing layout. The overall structure of the page utilizes a css grid, facilitating the creation of complex post layouts and the rendering of tabular information.</p>
+        <p class='hidden'>Personal blog project that utilizes Astro and React. The homepage of Minas Mongrel displays the latest blog posts. The blog employs a reactive tag navigation system, tt features dynamic search functionality, and supports tags, witch enabling users to navigate through the content by filtering posts.The integration of a search engine enhances user experience. At the end of each article, Minas Mongrel suggests similar posts, encouraging readers to delve deeper into the blog's content. </p>
+
+        <p class='hidden'>The responsive layout of the blog ensures a consistent and visually pleasing experience across various screen sizes, facilitated by Astro's responsive design features. The structural layout of Minas Mongrel benefits from the implementation of CSS Grid, ensuring a user-friendly interface and an appealing visual presentation. </p>
+
 
     
         <div class="links hidden">
@@ -63,13 +123,9 @@ import minasPhoto from '../assets/minasmongrel.jpg'
         </div>
         <span class="small-text hidden">Summary</span> 
         
-        <p class='hidden'>reTolkienddit is a React web app, which utilizes Redux and React-Router. The app fetches most popular posts related to Tolkien or LOTR interests from Reddit API. The details of each post such as image content, vote, and comments are displayed for users to easily consume.</p> 
+        <p class='hidden'>reTolkienddit is a React web app, which utilizes Redux and React-Router. The app fetches most popular posts related to Tolkien or LOTR interests from Reddit API. The details of each post such as image content, vote, and comments are displayed for users to easily consume. The design of the app is modern and elegant, with bright neutral colors and orange accents that match the theme of Reddit. </p> 
 
-        <p class='hidden'>The app is mainly composed of three integrated features: Subscribed Tag/Account, Post, and Comments. Custom tags/accounts functionality can be developed, which will allow users to add their own personalized subscriptions, resulting in a more tailored experience.</p>
-        
-        <p class='hidden'>One of the features of app is its Reddit-like mock-up vote functionality, which allows users to vote on posts. Additionally, the search functionality is optimized through its own routing system.</p>
-
-        <p class='hidden'>The design of the app is modern and elegant, with bright neutral colors and orange accents that match the theme of Reddit. </p>
+        <p class='hidden'>The app is mainly composed of three integrated features: Subscribed Tag/Account, Post, and Comments. One of the features of app is its Reddit-like mock-up vote functionality, which allows users to vote on posts. Additionally, the search functionality is optimized through its own routing system.</p>
 
         <div class="links hidden">
           <Button link="https://retolkienddit.netlify.app/" text="View Project" />
@@ -224,16 +280,14 @@ import minasPhoto from '../assets/minasmongrel.jpg'
     }
 
     & .column {
-        display: grid;
+        display: flex;
         flex-direction: column;
-        justify-items: start;
-        align-items: center;
         gap: 1.5rem;
 
     & .links {
-        margin-top: 2rem;
+        margin-top: auto;
         display: flex;
-        gap: 1rem
+        gap: 1rem;
     }
 
     & .tech-container {
