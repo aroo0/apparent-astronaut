@@ -9,13 +9,52 @@ import kaboomPhoto from '../assets/kaboomcompressed.webp'
 import minasPhoto from '../assets/minasmongrel.jpg'
 import rojslowPhoto from '../assets/rojslow.jpg'
 import dribblePhoto from '../assets/dribble.jpg'
+import ntsClonePhoto from "../assets/nts.jpg"
 
 ---
 <section class="projects" id="projects">
+  
     <article class="project project-first">
       <div class='container'>
         <h2 class="hidden">Projects</h2>
         </div>
+      <div class="grid one-one even container">
+        <div class="image-container column">
+          <Image src={ntsClonePhoto}  width='1239' height='1300'  class='hidden' alt="screen of website view" quality="100"/>
+        </div>
+      <div class="column">
+        <h4 class="hidden">NTS Clone</h4>
+        <span class="small-text hidden">Technology</span> 
+        <div class="tech-container tag-container">
+          <div class="tech-tag hidden">React</div>
+          <div class="tech-tag hidden">Next.js</div>
+          <div class="tech-tag hidden">Tailwind</div>
+          <div class="tech-tag hidden">Typescript</div>
+          <div class="tech-tag hidden">Supabase</div>
+          <div class="tech-tag hidden">Howler</div>
+          <div class="tech-tag hidden">Zustand</div>
+          <div class="tech-tag hidden">        Radix-UI</div>
+        </div>
+        <span class="small-text hidden">Summary</span> 
+
+        <p class='hidden'>
+          This is a faithful clone of NTS Radio, replicating both its functionality and distinctive style. At the heart of this project is a custom hook and store for the audio player, ensuring seamless playback of NTS Radio's api. User authentication is a fundamental aspect of this app, allowing users to access their personalized content and preferences. This authentication process is seamlessly integrated into the app, providing users with easy access to their favorite hosts and episodes.
+          </p>
+
+        <p class='hidden'>To keep the app up-to-date with the latest content, it fetches data directly from the original NTS API. The app incorporates a custom database and action to Supabase, ensuring data integrity and efficiency in managing user preferences and interactions. Features like infinite scroll, favorite host/episode, a powerful search engine, and exploration through genres and moods make this app a very comprehensive. Carousels displaying curated content further enrich the user experience, making it easy for users to discover new and exciting audio content. </p>
+        
+
+        
+
+
+    
+        <div class="links hidden">
+          <Button link="https://nts-clone.vercel.app/" text="View Project" />
+          <Button link="https://github.com/aroo0/nts-clone" text="Source Code" />
+        </div>
+    </div>
+    </article>
+    <article class="project gray">
       <div class="grid one-one container">
         <div class="image-container column">
           <Image src={rojslowPhoto}  width='1239' height='1300'  class='hidden' alt="screen of website view" quality="100"/>
